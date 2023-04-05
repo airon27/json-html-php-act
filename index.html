@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media</title>
+    
+</head>
+<body>
+    <h2 style="text-align: center">Show All Social Media Sites</h2>
+    <hr>
+    <p id="demo"></p>
+    
+    <script>
+    var txt = "";
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let socmed = JSON.parse(this.responseText);
+            console.log(socmed);
+            let txt = "";
+            let founders = "";
+            
+
+            for(i = 0; i < socmed.length;i++){
+                txt += `
+                    <p><b>Name: </b>${socmed[i].name}</p>
+                    <p><b>Company: </b>${socmed[i].company}</p>
+                    <p><b>Launched: </b>${socmed[i].launched}</p>
+                    <p><b>Description: </b>${socmed[i].description}</p>
+                    <p><b>Founders: </b></p>
+                `;
+                for(j = 0; j < socmed[i].founders.length; j++){
+                    txt += `
+                        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;*</b>${socmed[i].founders[j]}</p>
+                    `;
+                }
+                txt += '<hr>';
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+    }
+    xmlhttp.open("GET", "http://");
+    xmlhttp.send();
+
+    
+    </script>
+</body>
+</html>
