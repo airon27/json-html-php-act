@@ -6,7 +6,7 @@ xmlhttp.onreadystatechange = function() {
         SocMed(socmed);
     }
 };
-xmlhttp.open("GET", "http://json-php-html-act.test/socmed.php");
+xmlhttp.open("GET", "http://localhost/json/socmed.php");
 xmlhttp.send();
 
 
