@@ -1,0 +1,22 @@
+.zoom {
+	transition: transform .2s; /* Animation */
+  }
+
+.zoom:hover {
+transform: scale(1.3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.call-to-action {
+    position: relative;
+    background-color: #1c1c1c;
+    padding-top: 7rem;
+    padding-bottom: 7rem
+}
+.call-to-action .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: .3
+}
