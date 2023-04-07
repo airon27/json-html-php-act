@@ -32,99 +32,59 @@
         </div>
     </section>
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner py-5 bg-light">
-                <div id="demo">
-                </div>
-                <script>
-                    var txt = "";
-                    const xmlhttp = new XMLHttpRequest();
-                    xmlhttp.onload = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            let socmed = JSON.parse(this.responseText);
-                            console.log(socmed);
-                            let txt = "";
-                            let founders = "";
-                            
-                            for(i = 0; i < socmed.length;i++){
-                                if(i!=0){
-                                    txt +=`
-                                        <div class="carousel-item">
-                                            <div class="mask flex-center">
-                                                <div class="container">
-                                                <div class="row align-items-center">
-                                                    <div class="col-md-7 col-12 order-md-1 order-2">
-                                                    <h4 class="text-primary">${socmed[i].name} </h4>
-                                                    <h5 class="text-dark"> ${socmed[i].company}</h5>
-                                                    <p class="text-dark">Launched: ${socmed[i].launched}</p>
-                                                    <p class="text-dark">Description: ${socmed[i].description}</p>
-                                                    <p class="text-dark">Founders: </p>
-                                                    <ul>`;
-                                                        for(j = 0; j < socmed[i].founders.length; j++){
-                                                        txt += `
-                                                            <p class="text-dark"><b>&nbsp;&nbsp;&nbsp;&nbsp;• </b>${socmed[i].founders[j]}</p>
-                                                        `;
-                                                        }
-                                                    txt +=`
-                                                    </ul>
-                                                    </div>
-                                                    <div class="col-md-5 col-12 order-md-2 order-1 align-self-start"><img src="source/img/${socmed[i].img}" class="mx-auto" alt="slide"></div>
-                                                </div>
-                                                </div>
-                                            
-                                            </div>
-                                            </div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="demo" class="carousel-inner py-5 bg-light">
 
-                                        `;
-                                        }else{
-                                            txt +=`
-                                            <div class="carousel-item active">
-                                            <div class="mask flex-center">
-                                                <div class="container">
-                                                <div class="row align-items-center">
-                                                    <div class="col-md-7 col-12 order-md-1 order-2">
-                                                    <h4 class="text-primary">${socmed[i].name} </h4>
-                                                    <h5 class="text-dark">${socmed[i].company}</h5>
-                                                    <p class="text-dark">Lanched: ${socmed[i].launched}</p>
-                                                    <p class="text-dark">Description: ${socmed[i].description}</p>
-                                                    <p class="text-dark">Founders: </p>
-                                                    <ul>`;
-                                                        for(j = 0; j < socmed[i].founders.length; j++){
-                                                        txt += `
-                                                            <p class="text-dark"><b>&nbsp;&nbsp;&nbsp;&nbsp;• </b>${socmed[i].founders[j]}</p>
-                                                        `;
-                                                        }
-                                                    txt +=`
-                                                    </ul>
-                                                    </div>
-                                                    <div class="col-md-5 col-12 order-md-2 order-1 align-self-start "><img src="source/img/${socmed[i].img}" class="mx-auto" alt="slide"></div>
-                                                </div>
-                                                </div>
-                                            
-                                            </div>
-                                            </div>
-
-                                    `;
-                                            }
-                            }
-                            
-                            document.getElementById("demo").innerHTML = txt;
-                        }
-                    }
-                    xmlhttp.open("GET", "http://json-php-html-act.test/socmed.php");
-                    xmlhttp.send();    
-                </script> 
         </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> 
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span> 
-                <span class="sr-only">Previous</span> </a> 
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> 
-                <span class="carousel-control-next-icon" aria-hidden="true">
-                </span> <span class="sr-only">Next</span> 
-            </a> 
-        </div>
-        <!--slide end--> 
+        <a class="carousel-control-prev bg-primary rounded-circle mx-3" style="top: 60%; width: 3%;" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next bg-primary rounded-circle mx-3" style="top: 60%; width: 3%;" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
+    <!--slide end--> 
+
+    <section class="call-to-action text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h2 class="mb-4">Created by?</h2>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        Browse Creator
+                    </button>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title text-dark" id="exampleModalLongTitle">Created by:</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body text-left text-dark">
+                                <div class="text-center my-3">
+                                    <img src="source/img/airon.jpg" class="rounded-circle zoom" style="width: 25%;" alt="myPhoto">
+                                </div>
+                                <p><strong>Name:</strong> Airon Prince C. Beltran</p>
+                                <p><strong>College Course:</strong> Bachelor of Science in Information Technology</p>
+                                <p><strong>College Year:</strong> 3rd Year</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
