@@ -3,7 +3,7 @@
     // root
     $socmed = [
         [   
-            "img" => "img",
+            "img" => "fb.png",
             "name" => "Facebook",
             "company" => "Meta Platforms, Inc.",
             "launched" => "February 4, 2004",
@@ -11,7 +11,7 @@
             "founders" => ["Mark Zuckerberg","Eduardo Saverin","Dustin Moskovitz","Chris Hughes"]
         ],
         [
-            "img" => "img",
+            "img" => "yt.png",
             "name" => "Youtube",
             "company" => "Google Inc.",
             "launched" => "February 14, 2005",
@@ -19,7 +19,7 @@
             "founders" => ["Steve Chen","Chad Hurley","Jawed Karim","Susan Diane Wojcicki"]
         ],
         [
-            "img" => "img",
+            "img" => "ig.png",
             "name" => "Instagram",
             "company" => "Meta Platforms, Inc.",
             "launched" => "October 6, 2010",
@@ -27,7 +27,7 @@
             "founders" => ["Kevin Systrom","Mike Krieger","Adam","Mosseri"]
         ],
         [
-            "img" => "img",
+            "img" => "tiktok.png",
             "name" => "Tiktok",
             "company" => "ByteDance Ltd.",
             "launched" => "September 2016",
@@ -35,7 +35,7 @@
             "founders" => ["Zhang Yiming","Toutiao","Shou","Zi Chew"]
         ],
         [
-            "img" => "img",
+            "img" => "twitter.png",
             "name" => "Twitter",
             "company" => "Twitter, Inc.",
             "launched" => "March 21, 2006",
